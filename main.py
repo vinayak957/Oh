@@ -1,6 +1,6 @@
-
 import discord
 from discord.ext import commands
+from webservice import webservice
 import os
 
 intents = discord.Intents.default()
@@ -59,5 +59,5 @@ async def ban(ctx, member: discord.Member, *, reason="No reason"):
 async def clear(ctx, amount: int = 5):
     await ctx.channel.purge(limit=amount)
     await ctx.send(f"🧹 Cleared {amount} messages", delete_after=3)
-
+webservice()
 bot.run(os.environ['TOKEN'])
